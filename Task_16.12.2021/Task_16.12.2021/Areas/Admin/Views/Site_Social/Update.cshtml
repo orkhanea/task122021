@@ -1,0 +1,29 @@
+﻿
+@model SiteSocial
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form class="my-5 p-5" asp-area="Admin" asp-controller="Site_Social" asp-action="Update" method="post">
+    <div class="mb-3">
+        <label asp-for="@Model.Name" class="form-label">Social Name</label>
+        <input class="form-control" asp-for="@Model.Name">
+        <span class="text-danger" asp-validation-for="@Model.Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Icon" class="form-label">Social Icon</label>
+        <input class="form-control" asp-for="@Model.Icon">
+        <span class="text-danger" asp-validation-for="@Model.Icon"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Link" class="form-label">Social Link</label>
+        <input class="form-control" asp-for="@Model.Link">
+        <span class="text-danger" asp-validation-for="@Model.Link"></span>
+    </div>
+
+    <input type="hidden" asp-for="@Model.Id" />
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+

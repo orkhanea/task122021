@@ -1,0 +1,95 @@
+﻿
+@model Setting
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Setting</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th class="tableTrCustom">
+                                    Logo
+                                </th>
+                                <th class="tableTrCustom">
+                                    Footer Logo
+                                </th>
+                                <th class="tableTrCustom">
+                                    Footer BG Image
+                                </th>
+                                <th class="tableTrCustom">
+                                    Info
+                                </th>
+                                <th class="tableTrCustom">
+                                    Phone
+                                </th>
+                                <th class="tableTrCustom">
+                                    Email
+                                </th>
+                                <th class="tableTrCustom">
+                                    Address
+                                </th>
+                                <th class="tableTrCustom">
+                                    Copyright
+                                </th>
+                                <th class="tableTrCustom">
+                                    Copyright Link
+                                </th>
+                                <th class="tableTrCustom">
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                <tr>
+                                    <td class="p-1">
+                                        <img style="border-radius: unset !important; width: 100px !important; max-height: 100px !important" src="~/images/@Model.Logo" alt="image" />
+                                    </td>
+                                    <td class="p-1">
+                                        <img style="border-radius: unset !important; width: 100px !important; max-height: 100px !important" src="~/images/@Model.FooterLogo" alt="image" />
+                                    </td>
+                                    <td class="p-1">
+                                        <img style="border-radius: unset !important; width: 100px !important; max-height: 100px !important" src="~/images/background/@Model.FooterBg" alt="image" />
+                                    </td>
+
+
+                                    <td class="w-100">
+                                        <p>@(Model.Info.Length>50 ? Model.Info.Substring(0,50)+"..." : Model.Info)</p>
+                                    </td>
+                                    <td>
+                                        @Model.Phone
+                                    </td>
+                                    <td>
+                                        @Model.Email
+                                    </td>
+                                    <td>
+                                        @Model.Address
+                                    </td>
+                                    <td>
+                                        @Model.Copyright
+                                    </td>
+                                    <td>
+                                        @Model.CopyrightLink
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" asp-area="Admin" asp-controller="Setting" asp-action="Update">Update</a>
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

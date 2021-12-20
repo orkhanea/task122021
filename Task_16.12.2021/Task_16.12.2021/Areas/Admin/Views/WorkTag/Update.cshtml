@@ -1,0 +1,16 @@
+﻿@model WorkTag
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form class="my-5 p-5" asp-area="Admin" asp-controller="WorkTag" asp-action="Update" method="post">
+    <div class="mb-3">
+        <label asp-for="@Model.TagName" class="form-label">Tag Name</label>
+        <input class="form-control" asp-for="@Model.TagName">
+        <span class="text-danger" asp-validation-for="@Model.TagName"></span>
+    </div>
+
+    <input type="hidden" asp-for="@Model.Id"/>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
